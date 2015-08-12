@@ -1,13 +1,19 @@
 package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AdapterView;
 
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity
+    implements AdapterView.OnItemClickListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +41,18 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Intent intent = new Intent(this, ModeSelect.class);
+        startActivity(intent);
+        return true;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, ModeSelect.class);
+        startActivity(intent);
     }
 }

@@ -1,10 +1,14 @@
 package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+
+import javax.xml.transform.Result;
 
 
 public class GameActivity extends AppCompatActivity {
@@ -35,5 +39,13 @@ public class GameActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // Test
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Intent intent = new Intent(this, ResultActivity.class);
+        startActivity(intent);
+        return true;
     }
 }
