@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="eoe.s14007.std.it_college.ac.jp.expertofenglish.ModeSelect">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btnWordMode"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btnDailyTalkMode"
+        android:layout_below="@+id/btnWordMode"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btnNetSlangMode"
+        android:layout_below="@+id/btnDailyTalkMode"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btnBusinessMode"
+        android:layout_below="@+id/btnNetSlangMode"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBusinessMode"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/btnBack"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:padding="30dp"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/btnScoreShow"
+            android:padding="30dp"/>
+            </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

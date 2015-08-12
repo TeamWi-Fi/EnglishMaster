@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="main_title">英語の達人</string>
+    <string name="title_activity_mode_select">ModeSelect</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="title_activity_score">ScoreActivity</string>
 </resources>

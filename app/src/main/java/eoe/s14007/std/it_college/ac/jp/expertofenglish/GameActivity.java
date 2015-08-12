@@ -1,33 +1,28 @@
 package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.view.MotionEvent;
+
+import javax.xml.transform.Result;
 
 
-public class MainActivity extends AppCompatActivity
-    implements View.OnClickListener
-{
+public class GameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Button btnStart = (Button)findViewById(R.id.btnStart);
-        btnStart.setOnClickListener(this);
+        setContentView(R.layout.activity_game);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_game, menu);
         return true;
     }
 
@@ -46,10 +41,11 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    // Test
     @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(this, ModeSelect.class);
+    public boolean onTouchEvent(MotionEvent event) {
+        Intent intent = new Intent(this, ResultActivity.class);
         startActivity(intent);
-
+        return true;
     }
 }
