@@ -8,4 +8,21 @@
     <string name="title_activity_game">GameActivity</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="title_activity_score">ScoreActivity</string>
+    <string name="tv_total_title">総合得点</string>
+    <string name="tv_total_score"><u>○○.○○点</u></string>
+    <string name="tv_average">平均点</string>
+    <string name="tv_max_score">最高得点</string>
+    <string name="tv_word">単語編</string>
+    <string name="tv_daily">日常会話編</string>
+    <string name="tv_slang">ネットスラング編</string>
+    <string name="tv_business">ビジネス編</string>
+    <string name="tv_word_ave"><u>""</u></string>   <!--文字が入ると下線がつきます -->
+    <string name="tv_word_max"><u>""</u></string>   <!--文字が入ると下線がつきます -->
+    <string name="tv_daily_ave"><u>""</u></string>  <!--文字が入ると下線がつきます -->
+    <string name="tv_daily_max"><u>""</u></string>  <!--文字が入ると下線がつきます -->
+    <string name="tv_slang_ave"><u>""</u></string>  <!--文字が入ると下線がつきます -->
+    <string name="tv_slang_max"><u>""</u></string>  <!--文字が入ると下線がつきます -->
+    <string name="tv_business_ave"><u>""</u></string>   <!--文字が入ると下線がつきます -->
+    <string name="tv_business_max"><u>""</u></string>   <!--文字が入ると下線がつきます -->
+
 </resources>
