@@ -8,4 +8,12 @@
     <string name="title_activity_game">GameActivity</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="title_activity_score">ScoreActivity</string>
+
+    <!--activity_mode_select.xml-->
+    <string name="btnWordMode">単語編</string>
+    <string name="btnDailyTalkMode">日常会話編</string>
+    <string name="btnNetSlangMode">ネットスラング編</string>
+    <string name="btnBusinessMode">ビジネス編</string>
+    <string name="btnScoreShow">スコア</string>
+
 </resources>
