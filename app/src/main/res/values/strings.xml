@@ -16,6 +16,9 @@
     <string name="btnBusinessMode">ビジネス編</string>
     <string name="btnScoreShow">スコア</string>
 
+    <!--activity_result.xml-->
+    <string name="tv_result">Result</string>
+
     <!--activity_score.xml-->
     <string name="tv_total_score">総合平均</string>
     <string name="labelTotalAverage"><u>○○.○○点</u></string>

@@ -6,7 +6,47 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="eoe.s14007.std.it_college.ac.jp.expertofenglish.ResultActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_result"
+            android:textSize="70dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="ビジネス編"
+            android:textSize="70dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="9/10点"
+            android:textSize="70dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="平均点Up!!!"
+            android:textSize="40dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
 </RelativeLayout>
