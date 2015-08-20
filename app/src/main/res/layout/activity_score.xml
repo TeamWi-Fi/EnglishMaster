@@ -68,19 +68,21 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/tv_word_ave"
-                    android:text="@string/labelWordModeAve"
+                    android:id="@+id/labelWordModeAve"
+                    android:text=""
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
                     android:inputType="number"
-                    android:textSize="40dp"/>
+                    android:textSize="40dp"
+                    android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/tv_word_max"
+                    android:id="@+id/labelWordModeMaxScore"
                     android:text="@string/labelWordModeMaxScore"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
-                    android:textSize="40dp"/>
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
 
             </TableRow>
             <TextView
@@ -90,18 +92,20 @@
                 android:textSize="40dp"/>
             <TableRow>
                 <TextView
-                    android:id="@+id/tv_daily_ave"
+                    android:id="@+id/labelDailyModeAve"
                     android:text="@string/labelDailyModeAve"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
-                    android:textSize="40dp"/>
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
                 <TextView
-                    android:id="@+id/tv_daily_max"
+                    android:id="@+id/labelDailyModeMaxScore"
                     android:text="@string/labelDailyModeMaxScore"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
                     android:inputType="number"
-                    android:textSize="40dp"/>
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
             </TableRow>
             <TextView
                 android:id="@+id/tv_slang"
@@ -110,19 +114,21 @@
                 android:textSize="40dp"/>
             <TableRow>
                 <TextView
-                    android:id="@+id/tv_slang_ave"
+                    android:id="@+id/labelSlangModeAve"
                     android:text="@string/labelSlangModeAve"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
                     android:inputType="number"
-                    android:textSize="40dp" />
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
                 <TextView
-                    android:id="@+id/tv_slang_max"
+                    android:id="@+id/labelSlangModeMaxScore"
                     android:text="@string/labelSlangModeMaxScore"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
                     android:inputType="number"
-                    android:textSize="40dp" />
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
             </TableRow>
             <TextView
                 android:id="@+id/tv_business"
@@ -131,19 +137,21 @@
                 android:textSize="40dp" />
             <TableRow>
                 <TextView
-                    android:id="@+id/tv_business_ave"
+                    android:id="@+id/labelBusinessModeAve"
                     android:text="@string/labelSlangModeAve"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
                     android:inputType="number"
-                    android:textSize="40dp" />
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
                 <TextView
-                    android:id="@+id/tv_business_max"
+                    android:id="@+id/tlabelBusinessModeMaxScore"
                     android:text="@string/labelSlangModeMaxScore"
                     android:layout_marginRight="5dp"
                     android:layout_marginEnd="5dp"
                     android:inputType="number"
-                    android:textSize="40dp" />
+                    android:textSize="40dp"
+                    android:layout_gravity="center" />
             </TableRow>
 
         </TableLayout>
