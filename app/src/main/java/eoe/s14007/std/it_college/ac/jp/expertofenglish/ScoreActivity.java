@@ -2,11 +2,13 @@ package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
-public class ScoreActivity extends ActionBarActivity {
+public class ScoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,4 +37,17 @@ public class ScoreActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void showScores() {
+        TextView labelTotalAverage = (TextView)findViewById(R.id.labelTotalAverage);
+        TextView labelWordModeAve = (TextView)findViewById(R.id.labelWordModeAve);
+        TextView labelWordModeMaxScore = (TextView)findViewById(R.id.labelWordModeMaxScore);
+        TextView labelDailyModeAve = (TextView)findViewById(R.id.labelDailyModeAve);
+        TextView labelDailymodeMaxScore = (TextView)findViewById(R.id.labelDailyModeMaxScore);
+        TextView labelSlangModeAve = (TextView)findViewById(R.id.labelSlangModeAve);
+        TextView labelSlangModeMaxScore = (TextView)findViewById(R.id.labelSlangModeMaxScore);
+        TextView labelBusinessModeAve = (TextView)findViewById(R.id.labelBusinessModeAve);
+        TextView labelBusinessModeMaxScore = (TextView)findViewById(R.id.labelBusinessModeMaxScore);
+    }
+
 }
