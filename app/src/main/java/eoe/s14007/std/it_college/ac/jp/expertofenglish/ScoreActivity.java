@@ -43,7 +43,7 @@ public class ScoreActivity extends AppCompatActivity {
         TextView labelWordModeAve = (TextView)findViewById(R.id.labelWordModeAve);
         TextView labelWordModeMaxScore = (TextView)findViewById(R.id.labelWordModeMaxScore);
         TextView labelDailyModeAve = (TextView)findViewById(R.id.labelDailyModeAve);
-        TextView labelDailymodeMaxScore = (TextView)findViewById(R.id.labelDailyModeMaxScore);
+        TextView labelDailyModeMaxScore = (TextView)findViewById(R.id.labelDailyModeMaxScore);
         TextView labelSlangModeAve = (TextView)findViewById(R.id.labelSlangModeAve);
         TextView labelSlangModeMaxScore = (TextView)findViewById(R.id.labelSlangModeMaxScore);
         TextView labelBusinessModeAve = (TextView)findViewById(R.id.labelBusinessModeAve);
