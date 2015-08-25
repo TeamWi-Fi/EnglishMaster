@@ -1,6 +1,7 @@
 package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -48,10 +49,11 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void gameInit() {
-        DBHelper dbHelper =new DBHelper(this);
+        DBHelper dbHelper = new DBHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         TextView q = (TextView)findViewById(R.id.q);
-        q.setText(dbHelper.getReadableDatabase().toString());
+        q.setText(db.toString());
     }
 
     // Test
