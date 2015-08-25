@@ -2,42 +2,32 @@ package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.SQLException;
 
-/**
- * Created by s14007 on 15/08/18.
- */
+
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DB_FILE_NAME = "EnglishMaster.sqlite3";
-    private static final String DB_NAME = "EnglishMaster";
-    private static final int DB_VERSION = 1;
+    private static final String TAG = "DBHelper";
+    private static final String SRC_DATABASE_NAME = "EnglishMaster.sqlite3";  // assetsフォルダにあるdbのファイル名
+    private static final String DATABASE_NAME = "EnglishMaster";  // コピー先のDB名
+    private static final int DATABASE_VERSION = 1;
 
-    private Context context;
-    private File dbPath;
+    private final Context context;
+    private final File databasePath;
     private boolean createDatabase = false;
 
     public DBHelper(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
-        this.dbPath = context.getDatabasePath(DB_NAME);
-    }
-
-    @Override
-    public synchronized SQLiteDatabase getReadableDatabase() {
-        SQLiteDatabase database = super.getReadableDatabase();
-        if (createDatabase) {
-            try {
-                database = copyDatabase(database);
-            } catch (IOException e) {
-            }
-        }
-        return database;
+        this.databasePath = context.getDatabasePath(DATABASE_NAME);
     }
 
     @Override
@@ -47,6 +37,8 @@ public class DBHelper extends SQLiteOpenHelper {
             try {
                 database = copyDatabase(database);
             } catch (IOException e) {
+                Log.wtf(TAG, e);
+                database.close();
             }
         }
         return database;
@@ -57,13 +49,14 @@ public class DBHelper extends SQLiteOpenHelper {
         database.close();
 
         // コピー！
-        InputStream input = context.getAssets().open(DB_FILE_NAME);
-        OutputStream output = new FileOutputStream(this.dbPath);
+        InputStream input = context.getAssets().open(SRC_DATABASE_NAME);
+        OutputStream output = new FileOutputStream(databasePath);
         copy(input, output);
 
         createDatabase = false;
         // dbを閉じたので、また開く
         return super.getWritableDatabase();
+
     }
 
     @Override
@@ -76,14 +69,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        onUpgrade(db, oldVersion, newVersion);
+        String s = "DROP TABLE IF EXISTS " + SRC_DATABASE_NAME;
+        db.execSQL(s);
     }
 
     // CopyUtilsからのコピペ
     private static int copy(InputStream input, OutputStream output) throws IOException {
         byte[] buffer = new byte[1024 * 4];
         int count = 0;
-        int n = 0;
+        int n;
         while (-1 != (n = input.read(buffer))) {
             output.write(buffer, 0, n);
             count += n;
