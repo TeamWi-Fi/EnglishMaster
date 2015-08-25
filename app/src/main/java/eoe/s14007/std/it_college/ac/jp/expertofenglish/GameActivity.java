@@ -1,11 +1,13 @@
 package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -49,11 +51,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void gameInit() {
-        DBHelper dbHelper = new DBHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        TextView q = (TextView)findViewById(R.id.q);
-        q.setText(db.toString());
     }
 
     // Test
