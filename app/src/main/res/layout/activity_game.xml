@@ -11,10 +11,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <ImageView
+        <!--<ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />-->
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/q"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

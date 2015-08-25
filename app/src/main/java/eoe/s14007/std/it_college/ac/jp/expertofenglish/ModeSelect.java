@@ -15,6 +15,7 @@ import android.widget.Button;
 public class ModeSelect extends AppCompatActivity
     implements View.OnClickListener
 {
+    public static int stageId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,31 +55,37 @@ public class ModeSelect extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnWordMode:
+                stageId = 0;
                 Intent intent = new Intent(this, GameActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.btnNetSlangMode:
+                stageId = 1;
                 Intent intent1 = new Intent(this, GameActivity.class);
                 startActivity(intent1);
                 finish();
                 break;
             case R.id.btnDailyTalkMode:
+                stageId = 2;
                 Intent intent2 = new Intent(this, GameActivity.class);
                 startActivity(intent2);
                 finish();
                 break;
             case R.id.btnBusinessMode:
+                stageId = 3;
                 Intent intent3 = new Intent(this, GameActivity.class);
                 startActivity(intent3);
                 finish();
                 break;
             case R.id.btnBack:
+                stageId = 4;
                 Intent intent4 = new Intent(this, MainActivity.class);
                 startActivity(intent4);
                 finish();
                 break;
             case R.id.btnScoreShow:
+                stageId = 5;
                 Intent intent5 = new Intent(this, ScoreActivity.class);
                 startActivity(intent5);
                 finish();
