@@ -1,12 +1,20 @@
 package eoe.s14007.std.it_college.ac.jp.expertofenglish;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.widget.TextView;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.xml.transform.Result;
 
@@ -17,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        gameInit();
     }
 
     @Override
@@ -41,10 +50,17 @@ public class GameActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void gameInit() {
+
+    }
+
     // Test
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Intent i = getIntent();
+        String keyword = i.getStringExtra("id");
         Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("id", keyword);
         startActivity(intent);
         return true;
     }
