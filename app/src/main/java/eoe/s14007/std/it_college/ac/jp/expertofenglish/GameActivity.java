@@ -26,7 +26,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_game);
 
         gameInit();
     }
@@ -57,13 +57,13 @@ public class GameActivity extends AppCompatActivity {
         /*TextView q = (TextView)findViewById(R.id.q);
         q.setText(QuestionBank.randomQView());*/
 
-        TextView question = (TextView)findViewById(R.id.question);
+        TextView question = (TextView)findViewById(R.id.q);
 
         final TextView finalAnswer = (TextView)findViewById(R.id.answer);
-        final TextView btn1 = (TextView)findViewById(R.id.button1);
-        final TextView btn2 = (TextView)findViewById(R.id.button2);
-        final TextView btn3 = (TextView)findViewById(R.id.button3);
-        final TextView btn4 = (TextView)findViewById(R.id.button4);
+        final TextView btn1 = (TextView)findViewById(R.id.btn1);
+        final TextView btn2 = (TextView)findViewById(R.id.btn2);
+        final TextView btn3 = (TextView)findViewById(R.id.btn3);
+        final TextView btn4 = (TextView)findViewById(R.id.btn4);
         final TextView[] a = {btn1,btn2,btn3,btn4};
 
         final String[] hoge = QuestionBank.randomQView();
@@ -79,64 +79,43 @@ public class GameActivity extends AppCompatActivity {
             a[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (answer.equals(a[finalI].getText())) {
-                        finalAnswer.setText("正解");
-                    } else {
-                        finalAnswer.setText(a[finalI].getText());
+                    mPopupWindow = new PopupWindow(GameActivity.this);
 
-                        mPopupWindow = new PopupWindow(GameActivity.this);
-
-                        // レイアウト設定
-                        View popupView = getLayoutInflater().inflate(R.layout.activity_test, null);
-                        popupView.findViewById(R.id.close_button).setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                if (mPopupWindow.isShowing()) {
-                                    mPopupWindow.dismiss();
-                                }
+                    // レイアウト設定
+                    View popupView = getLayoutInflater().inflate(R.layout.activity_poupwindow, null);
+                    popupView.findViewById(R.id.close_button).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (mPopupWindow.isShowing()) {
+                                mPopupWindow.dismiss();
                             }
-                        });
-                        mPopupWindow.setContentView(popupView);
+                        }
+                    });
+                    mPopupWindow.setContentView(popupView);
 
-                        // タップ時に他のViewでキャッチされないための設定
-                        mPopupWindow.setOutsideTouchable(true);
-                        mPopupWindow.setFocusable(true);
+                    // タップ時に他のViewでキャッチされないための設定
+                    mPopupWindow.setOutsideTouchable(true);
+                    mPopupWindow.setFocusable(true);
 
-                        // 表示サイズの設定 今回は幅300dp
-                        float width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300, getResources().getDisplayMetrics());
-                        mPopupWindow.setWindowLayoutMode((int) width, WindowManager.LayoutParams.WRAP_CONTENT);
-                        mPopupWindow.setWidth((int) width);
-                        mPopupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
+                    // 表示サイズの設定 今回は幅300dp
+                    float width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300, getResources().getDisplayMetrics());
+                    mPopupWindow.setWindowLayoutMode((int) width, WindowManager.LayoutParams.WRAP_CONTENT);
+                    mPopupWindow.setWidth((int) width);
+                    mPopupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
 
-                        // 画面中央に表示
-                        mPopupWindow.showAtLocation(findViewById(R.id.close_button), Gravity.CENTER, 0, 0);
+                    // 画面中央に表示
+                    mPopupWindow.showAtLocation(findViewById(R.id.btn1), Gravity.CENTER, 0, 0);
                     }
-                }
             });
         }
+    }
 
-        /*btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finalAnswer.setText(btn2.getText());
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finalAnswer.setText(btn3.getText());
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finalAnswer.setText(btn4.getText());
-            }
-        });*/
-
-
+    @Override
+    protected void onDestroy() {
+        if (mPopupWindow != null && mPopupWindow.isShowing()) {
+            mPopupWindow.dismiss();
+        }
+        super.onDestroy();
     }
 
     // Test
